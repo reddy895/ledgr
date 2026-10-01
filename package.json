@@ -3,16 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "node-gyp rebuild --directory node_modules/better-sqlite3 2>/dev/null || true",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs"
   },
   "dependencies": {
     "@nivo/sankey": "^0.99.0",
     "@tanstack/react-virtual": "^3.13.23",
-    "@types/better-sqlite3": "^7.6.13",
     "better-sqlite3": "^12.6.2",
     "daisyui": "^5.5.19",
     "lucide-react": "^1.8.0",
@@ -20,11 +19,12 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "recharts": "^3.8.0",
-    "xlsx": "^0.18.5",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "yahoo-finance2": "^3.13.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

@@ -1,0 +1,15 @@
+services:
+  ledgr:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      LEDGR_DATA_DIR: /data
+    volumes:
+      - type: bind
+        source: /srv/ledgr/dumps
+        target: /data
+        bind:
+          create_host_path: false
